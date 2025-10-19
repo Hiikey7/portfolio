@@ -16,7 +16,7 @@ interface FooterContent {
 const defaultContent: FooterContent = {
   tagline:
     "We combine innovative design with advanced technology to help brands tell their stories and connect with audiences .",
-  copyright: "© 2025 — stanpixels creatives Uk",
+  copyright: "© 2025 — stanpixels creatives ",
 };
 
 export function AppverseFooter() {
@@ -52,7 +52,7 @@ export function AppverseFooter() {
             <div className="space-y-3">
               <div className="flex items-center gap-1.5">
                 <Image
-                  src="/icons/stanpixels-white.svg"
+                  src="/icon.png"
                   alt="stanpixels logo"
                   width={24}
                   height={24}

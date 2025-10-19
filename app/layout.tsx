@@ -38,7 +38,7 @@ export default function RootLayout({
           {`
             function updateFavicon() {
               const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-              const faviconHref = darkMode ? '/icons/stanpixels-white.svg' : '/icons/favicon-dark.svg';
+              const faviconHref = darkMode ? '/icon.png' : '/icon.png';
               let link = document.querySelector("link[rel~='icon']");
               if (!link) {
                 link = document.createElement('link');

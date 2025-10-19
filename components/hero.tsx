@@ -24,7 +24,7 @@ export function Hero() {
         <div className="flex flex-col items-center justify-center py-14 sm:py-20">
           <div className="mb-5 flex items-center gap-2">
             <Image
-              src="/icons/stanpixels-white.svg"
+              src="/icon.png"
               alt="stanpixels logo"
               width={32}
               height={32}
