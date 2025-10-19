@@ -4,7 +4,7 @@
 import React, { useState, useEffect } from "react";
 import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 
-export default function AboutPage() {
+function AboutContent() {
   const [mounted, setMounted] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -292,3 +292,5 @@ export default function AboutPage() {
     </>
   );
 }
+
+export default AboutContent;

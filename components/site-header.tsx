@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname } from "next/navigation"; // Removed useSearchParams
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -26,9 +26,13 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-export function SiteHeader() {
+// Add searchParams as a prop
+export function SiteHeader({
+  searchParams,
+}: {
+  searchParams: URLSearchParams;
+}) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
   const links = [
     { href: "/", label: "Home", icon: Briefcase },
     {
@@ -90,7 +94,7 @@ export function SiteHeader() {
                           className={`transition-colors text-white ${
                             sub.href ===
                             pathname +
-                              (searchParams.toString()
+                              (searchParams?.toString()
                                 ? "?" + searchParams.toString()
                                 : "")
                               ? "text-[#3ab3ff]"
