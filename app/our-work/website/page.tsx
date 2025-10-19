@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 
 export default function WebsitePage() {
   const schemaData = {
@@ -110,7 +110,7 @@ export default function WebsitePage() {
 
   return (
     <>
-      <SiteHeader />
+      <SuspenseSiteHeader />
       {/* SEO Schema */}
       <script
         type="application/ld+json"

@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 import { ShoppingCart } from "lucide-react";
 
 interface PageProps {
@@ -435,7 +435,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
 
   return (
     <>
-      <SiteHeader />
+      <SuspenseSiteHeader />
       {/* Hero Section */}
       <section className="relative bg-black text-white py-12 px-6 md:px-12 lg:px-20">
         <div className="max-w-4xl mx-auto text-center">

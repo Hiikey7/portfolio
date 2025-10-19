@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search } from "lucide-react";
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 
 export default function BrandingPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -108,7 +108,7 @@ export default function BrandingPage() {
 
   return (
     <>
-      <SiteHeader />
+      <SuspenseSiteHeader />
       {/* SEO Schema */}
       <script
         type="application/ld+json"

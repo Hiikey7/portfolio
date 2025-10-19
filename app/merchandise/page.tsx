@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -76,7 +76,7 @@ export default function MerchandisePage() {
 
   return (
     <>
-      <SiteHeader />
+      <SuspenseSiteHeader />
       {/* SEO Schema */}
       <script
         type="application/ld+json"

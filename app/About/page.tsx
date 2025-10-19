@@ -2,7 +2,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 
 export default function AboutPage() {
   const [mounted, setMounted] = useState(false);
@@ -90,7 +90,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <SiteHeader />
+      <SuspenseSiteHeader />
       {/* SEO Schema for Google + LLMs */}
       <script
         type="application/ld+json"

@@ -1,4 +1,4 @@
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 import { Hero } from "@/components/hero";
 import { Features } from "@/components/features";
 import { LogoMarquee } from "@/components/logo-marquee";
@@ -86,7 +86,7 @@ export default function Page() {
   return (
     <>
       <main className="min-h-[100dvh] text-white">
-        <SiteHeader />
+        <SuspenseSiteHeader />
         <Hero />
         <Features />
         <LogoMarquee />

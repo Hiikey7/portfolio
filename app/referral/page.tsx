@@ -1,7 +1,7 @@
 // app/referral/page.tsx
 import React from "react";
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 import { Button } from "@/components/ui/button";
 import { AppverseFooter } from "@/components/appverse-footer";
 
@@ -17,7 +17,7 @@ export default function ReferralPage() {
 
   return (
     <>
-      <SiteHeader />
+      <SuspenseSiteHeader />
       {/* SEO Schema */}
       <script
         type="application/ld+json"

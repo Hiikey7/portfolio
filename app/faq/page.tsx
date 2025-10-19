@@ -1,10 +1,10 @@
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 import { AppverseFooter } from "@/components/appverse-footer";
 
 export default function FAQPage() {
   return (
     <>
-      <SiteHeader />
+      <SuspenseSiteHeader />
       <section className="bg-[#0a0a0a] text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">

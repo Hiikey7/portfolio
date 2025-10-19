@@ -3,7 +3,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { SiteHeader } from "@/components/site-header";
+import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Copy, Share2 } from "lucide-react";
@@ -162,7 +162,7 @@ export default function ResourcesPage() {
 
   return (
     <>
-      <SiteHeader />
+      <SuspenseSiteHeader />
       {/* SEO Schema */}
       <script
         type="application/ld+json"
