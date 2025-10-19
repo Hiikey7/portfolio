@@ -41,7 +41,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
   // TODO: Replace the images in worksData with actual project images
   // Mock data for different branding works
   const worksData: Record<number, WorkData> = {
-    1: {
+    2: {
       title: "Event & Club Poster",
       description: "Creative event and club poster design.",
       images: [
@@ -74,7 +74,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    2: {
+    3: {
       title: "Sports Graphics",
       description: "Dynamic sports graphics and visual elements.",
       images: [
@@ -111,7 +111,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    3: {
+    4: {
       title: "Social Media Post",
       description: "Engaging social media post designs.",
       images: [
@@ -152,7 +152,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    4: {
+    5: {
       title: "Print Materials",
       description: "Professional print materials design.",
       images: [
@@ -187,7 +187,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    5: {
+    6: {
       title: "Politics Branding",
       description: "Political branding and campaign materials.",
       images: ["/p1.jpg", "/p2.jpg", "/p3.jpg", "/p4.jpg", "/p5.jpg"],
@@ -211,7 +211,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    6: {
+    7: {
       title: "Brand Identity 2",
       description: "Complete brand identity development.",
       images: ["/br.jpg", "/br1.jpg", "/br3.jpg"],
@@ -235,7 +235,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    7: {
+    8: {
       title: "Logo Design 2",
       description: "Custom logo design services.",
       images: ["/l.jpg", "/l1.jpg", "/l2.jpg"],
@@ -259,7 +259,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    8: {
+    9: {
       title: "Eulogy Booklet",
       description: "Elegant eulogy booklet design.",
       images: ["/f1.jpg", "/f2.jpg", "/f3.jpg"],
@@ -283,7 +283,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    9: {
+    10: {
       title: "Presentations",
       description: "Professional presentation design.",
       images: ["/prs.jpg", "/prs1.jpg"],
@@ -307,7 +307,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    10: {
+    11: {
       title: "Product ads",
       description: "Effective product advertisement design.",
       images: ["/b1.jpg", "/b2.jpg", "/b3.jpg"],
@@ -331,7 +331,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    11: {
+    12: {
       title: "Company Profile",
       description: "Comprehensive company profile design.",
       images: ["/co.jpg", "/co1.jpg"],
@@ -355,7 +355,7 @@ export default async function BrandingWorkDetail({ params }: PageProps) {
         },
       },
     },
-    12: {
+    1: {
       title: "Motion Graphics",
       description: "Animated motion graphics and videos.",
       images: ["/wb.jpg", "/sg7.jpg"],
