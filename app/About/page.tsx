@@ -1,10 +1,11 @@
 // app/about/page.tsx
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { SiteHeader } from "@/components/site-header";
+import { useSearchParams } from "next/navigation";
 
-export default function AboutPage() {
+function AboutContent({ searchParams }: { searchParams: URLSearchParams }) {
   const [mounted, setMounted] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
@@ -90,7 +91,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <SiteHeader />
+      <SiteHeader searchParams={searchParams} />
       {/* SEO Schema for Google + LLMs */}
       <script
         type="application/ld+json"
@@ -290,5 +291,14 @@ export default function AboutPage() {
         </a>
       </section>
     </>
+  );
+}
+
+export default function AboutPage() {
+  const searchParams = useSearchParams();
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AboutContent searchParams={searchParams} />
+    </Suspense>
   );
 }
