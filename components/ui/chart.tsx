@@ -263,12 +263,13 @@ function ChartLegendContent({
   verticalAlign = "bottom",
   nameKey,
 }: React.ComponentProps<"div"> &
+  // @ts-ignore - Recharts type issue
   Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> & {
     hideIcon?: boolean
     nameKey?: string
   }) {
   const { config } = useChart()
-
+  // @ts-ignore - Recharts type issue
   if (!payload?.length) {
     return null
   }
@@ -281,6 +282,7 @@ function ChartLegendContent({
         className
       )}
     >
+      {/* @ts-ignore - Recharts type issue */}
       {payload.map((item) => {
         const key = `${nameKey || item.dataKey || "value"}`
         const itemConfig = getPayloadConfigFromPayload(config, item, key)
