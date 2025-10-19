@@ -5,13 +5,13 @@ import { Button } from "@/components/ui/button";
 import { SuspenseSiteHeader } from "@/components/suspense-site-header";
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function WebsiteWorkDetail({ params }: PageProps) {
-  const { id } = params;
+export default async function WebsiteWorkDetail({ params }: PageProps) {
+  const { id } = await params;
 
   // Mock data for different website works
   const worksData = {

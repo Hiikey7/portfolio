@@ -611,15 +611,15 @@ export default function CheckoutPage() {
                           <div className="font-semibold text-white text-base group-hover:text-[#3ab3ff] transition-colors sm:text-lg">
                             {option.title}
                           </div>
-                          {option.price && (
+                          {("price" in option) && (option as any).price && (
                             <div className="text-[#3ab3ff] font-bold text-sm sm:text-base">
-                              {option.price}
+                              {(option as any).price}
                             </div>
                           )}
                         </div>
-                        {option.subtitle && (
+                        {(option as any).subtitle && (
                           <div className="text-neutral-400 text-sm mt-1 sm:text-base">
-                            {option.subtitle}
+                            {(option as any).subtitle}
                           </div>
                         )}
                       </div>

@@ -1344,11 +1344,13 @@ export default function AdminDashboard() {
                               };
                               newOptions[option].price_usd =
                                 Number.parseInt(e.target.value) || 0;
-                              handleContentChange(
-                                "orderForm",
-                                "modelingOptions",
-                                newOptions
-                              );
+                              setContent((prev) => ({
+                                ...prev,
+                                orderForm: {
+                                  ...prev.orderForm,
+                                  modelingOptions: newOptions,
+                                },
+                              }));
                             }}
                             className="bg-[#0f0f0f] border-neutral-700 text-white"
                           />
@@ -1367,11 +1369,13 @@ export default function AdminDashboard() {
                               };
                               newOptions[option].price_inr =
                                 Number.parseInt(e.target.value) || 0;
-                              handleContentChange(
-                                "orderForm",
-                                "modelingOptions",
-                                newOptions
-                              );
+                              setContent((prev) => ({
+                                ...prev,
+                                orderForm: {
+                                  ...prev.orderForm,
+                                  modelingOptions: newOptions,
+                                },
+                              }));
                             }}
                             className="bg-[#0f0f0f] border-neutral-700 text-white"
                           />
@@ -1390,11 +1394,13 @@ export default function AdminDashboard() {
                                 ...content.orderForm.modelingOptions,
                               };
                               newOptions[option].description = e.target.value;
-                              handleContentChange(
-                                "orderForm",
-                                "modelingOptions",
-                                newOptions
-                              );
+                              setContent((prev) => ({
+                                ...prev,
+                                orderForm: {
+                                  ...prev.orderForm,
+                                  modelingOptions: newOptions,
+                                },
+                              }));
                             }}
                             className="bg-[#0f0f0f] border-neutral-700 text-white"
                           />
@@ -1436,11 +1442,13 @@ export default function AdminDashboard() {
                               };
                               newOptions[option].price_usd =
                                 Number.parseInt(e.target.value) || 0;
-                              handleContentChange(
-                                "orderForm",
-                                "renderOptions",
-                                newOptions
-                              );
+                              setContent((prev) => ({
+                                ...prev,
+                                orderForm: {
+                                  ...prev.orderForm,
+                                  renderOptions: newOptions,
+                                },
+                              }));
                             }}
                             className="bg-[#0f0f0f] border-neutral-700 text-white"
                           />
@@ -1458,11 +1466,13 @@ export default function AdminDashboard() {
                               };
                               newOptions[option].price_inr =
                                 Number.parseInt(e.target.value) || 0;
-                              handleContentChange(
-                                "orderForm",
-                                "renderOptions",
-                                newOptions
-                              );
+                              setContent((prev) => ({
+                                ...prev,
+                                orderForm: {
+                                  ...prev.orderForm,
+                                  renderOptions: newOptions,
+                                },
+                              }));
                             }}
                             className="bg-[#0f0f0f] border-neutral-700 text-white"
                           />
@@ -1480,11 +1490,13 @@ export default function AdminDashboard() {
                               };
                               newOptions[option].quantity =
                                 Number.parseInt(e.target.value) || 0;
-                              handleContentChange(
-                                "orderForm",
-                                "renderOptions",
-                                newOptions
-                              );
+                              setContent((prev) => ({
+                                ...prev,
+                                orderForm: {
+                                  ...prev.orderForm,
+                                  renderOptions: newOptions,
+                                },
+                              }));
                             }}
                             className="bg-[#0f0f0f] border-neutral-700 text-white"
                           />
@@ -1589,11 +1601,13 @@ export default function AdminDashboard() {
                             onChange={(e) => {
                               const newSteps = [...content.orderForm.formSteps];
                               newSteps[index].title = e.target.value;
-                              handleContentChange(
-                                "orderForm",
-                                "formSteps",
-                                newSteps
-                              );
+                              setContent((prev) => ({
+                                ...prev,
+                                orderForm: {
+                                  ...prev.orderForm,
+                                  formSteps: newSteps,
+                                },
+                              }));
                             }}
                             className="bg-[#0f0f0f] border-neutral-700 text-white font-medium"
                             placeholder="Step title"
@@ -1603,11 +1617,13 @@ export default function AdminDashboard() {
                             onChange={(e) => {
                               const newSteps = [...content.orderForm.formSteps];
                               newSteps[index].description = e.target.value;
-                              handleContentChange(
-                                "orderForm",
-                                "formSteps",
-                                newSteps
-                              );
+                              setContent((prev) => ({
+                                ...prev,
+                                orderForm: {
+                                  ...prev.orderForm,
+                                  formSteps: newSteps,
+                                },
+                              }));
                             }}
                             className="bg-[#0f0f0f] border-neutral-700 text-white text-sm"
                             placeholder="Step description"
@@ -1621,11 +1637,13 @@ export default function AdminDashboard() {
                           onClick={() => {
                             const newSteps = [...content.orderForm.formSteps];
                             newSteps[index].enabled = !newSteps[index].enabled;
-                            handleContentChange(
-                              "orderForm",
-                              "formSteps",
-                              newSteps
-                            );
+                            setContent((prev) => ({
+                              ...prev,
+                              orderForm: {
+                                ...prev.orderForm,
+                                formSteps: newSteps,
+                              },
+                            }));
                           }}
                           className={`${
                             step.enabled
