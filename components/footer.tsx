@@ -10,8 +10,7 @@ export function Footer() {
             Features
           </a>
           <a
-            href="https://g.page/your-business-id"
-            target="_blank"
+            href="https://g.page/r/Cf24_Y6fK0u2EAI/review"
             rel="noopener noreferrer"
             className="hover:text-blue-300"
           >
