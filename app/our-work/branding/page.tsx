@@ -24,7 +24,7 @@ export default function BrandingPage() {
       title: "Motion Graphics",
       image:
         "https://mu73aitmabymkzpg.public.blob.vercel-storage.com/motion.mp4",
-      price: "from KSH 1,500",
+      price: "from KSH 3,500",
     },
     {
       id: 2,
