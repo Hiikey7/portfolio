@@ -9,6 +9,13 @@ import {
   CardFooter,
   CardHeader,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { CheckCircle2 } from "lucide-react";
 import { ExamplesDialog } from "./examples-dialog";
@@ -173,430 +180,464 @@ export function Pricing() {
           </TabsList>
 
           <TabsContent value="website">
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {/* Basic Website */}
-              <Card
-                className="relative overflow-hidden rounded-2xl liquid-glass shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300"
-                itemScope
-                itemType="https://schema.org/Offer"
-              >
-                <CardHeader className="space-y-3 pb-4">
-                  <div
-                    className="text-sm font-semibold text-neutral-200"
-                    itemProp="name"
-                  >
-                    Starter
-                  </div>
-                  <div className="flex items-end gap-2 text-neutral-100">
-                    <div
-                      className="text-sm font-bold tracking-tight"
-                      itemProp="price"
+            <Carousel
+              opts={{
+                align: "start",
+                startIndex: 1, // Set the middle package to be seen first
+                dragFree: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="flex [&>div]:min-w-[80%] md:grid md:grid-cols-3 md:gap-x-6 [&>div]:md:min-w-0">
+                <CarouselItem className="md:basis-auto">
+                  <div className="mt-10">
+                    {/* Basic Website */}
+                    <Card
+                      className="relative overflow-hidden rounded-2xl liquid-glass shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300 min-h-[500px]"
+                      itemScope
+                      itemType="https://schema.org/Offer"
                     >
-                      Ksh.25,000
-                    </div>
-                    <meta itemProp="priceCurrency" content="USD" />
+                      <CardHeader className="space-y-3 pb-4">
+                        <div
+                          className="text-sm font-semibold text-neutral-200"
+                          itemProp="name"
+                        >
+                          Starter
+                        </div>
+                        <div className="flex items-end gap-2 text-neutral-100">
+                          <div
+                            className="text-sm font-bold tracking-tight"
+                            itemProp="price"
+                          >
+                            Ksh.25,000
+                          </div>
+                          <meta itemProp="priceCurrency" content="USD" />
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
+                            style={{
+                              backgroundColor: "#0a0a0a",
+                              color: "#ffffff",
+                              border: "1px solid #333",
+                            }}
+                          >
+                            <Link href="/our-work/website">View Samples</Link>
+                          </Button>
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
+                            style={{ backgroundColor: ACCENT }}
+                          >
+                            <Link
+                              href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Starter%20Website"
+                              target="_blank"
+                            >
+                              Order Now
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <ul className="grid gap-2" itemProp="description">
+                          {[
+                            "Up to 5 pages",
+                            "Responsive design",
+                            "Basic SEO setup",
+                            "Contact form",
+                            "1 month support",
+                          ].map((f, i) => (
+                            <FeatureItem key={i} text={f} />
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter />
+                    </Card>
                   </div>
-                  <div className="flex gap-2">
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                      style={{
-                        backgroundColor: "#0a0a0a",
-                        color: "#ffffff",
-                        border: "1px solid #333",
-                      }}
-                    >
-                      <Link href="/our-work?tab=website">View Examples</Link>
-                    </Button>
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
-                      style={{ backgroundColor: ACCENT }}
-                    >
-                      <Link
-                        href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Starter%20Website"
-                        target="_blank"
-                      >
-                        Order Now
-                      </Link>
-                    </Button>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <ul className="grid gap-2" itemProp="description">
-                    {[
-                      "Up to 5 pages",
-                      "Responsive design",
-                      "Basic SEO setup",
-                      "Contact form",
-                      "1 month support",
-                    ].map((f, i) => (
-                      <FeatureItem key={i} text={f} />
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter />
-              </Card>
+                </CarouselItem>
 
-              {/* Pro Website */}
-              <Card
-                className="relative overflow-hidden rounded-2xl liquid-glass shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300"
-                itemScope
-                itemType="https://schema.org/Offer"
-              >
-                <CardHeader className="space-y-3 pb-4">
-                  <div className="flex items-center justify-between">
-                    <div
-                      className="text-sm font-semibold text-neutral-200"
-                      itemProp="name"
+                <CarouselItem className="md:basis-auto">
+                  <div className="mt-10">
+                    {/* Pro Website */}
+                    <Card
+                      className="relative overflow-hidden rounded-2xl liquid-glass shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300 min-h-[500px]"
+                      itemScope
+                      itemType="https://schema.org/Offer"
                     >
-                      Professional
-                    </div>
-                    <span className="bg-[#3ab3ff] text-black text-xs font-bold px-2 py-1 rounded-full">
-                      Popular
-                    </span>
+                      <CardHeader className="space-y-3 pb-4">
+                        <div className="flex items-center justify-between">
+                          <div
+                            className="text-sm font-semibold text-neutral-200"
+                            itemProp="name"
+                          >
+                            Professional
+                          </div>
+                          <span className="bg-[#3ab3ff] text-black text-xs font-bold px-2 py-1 rounded-full">
+                            Popular
+                          </span>
+                        </div>
+                        <div className="flex items-end gap-2 text-neutral-100">
+                          <div
+                            className="text-sm font-bold tracking-tight"
+                            itemProp="price"
+                          >
+                            Ksh.35,000
+                          </div>
+                          <meta itemProp="priceCurrency" content="USD" />
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
+                            style={{
+                              backgroundColor: "#0a0a0a",
+                              color: "#ffffff",
+                              border: "1px solid #333",
+                            }}
+                          >
+                            <Link href="/our-work/website">View Samples</Link>
+                          </Button>
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
+                            style={{ backgroundColor: ACCENT }}
+                          >
+                            <Link
+                              href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Professional%20Website"
+                              target="_blank"
+                            >
+                              Order Now
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <ul className="grid gap-2" itemProp="description">
+                          {[
+                            "Up to 10 pages",
+                            "Advanced responsive design",
+                            "SEO optimization",
+                            "Google Analytics setup",
+                            "3rd party integration",
+                            "CMS integration",
+                            "Admin panel",
+                            "3 months support",
+                          ].map((f, i) => (
+                            <FeatureItem key={i} text={f} />
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter />
+                    </Card>
                   </div>
-                  <div className="flex items-end gap-2 text-neutral-100">
-                    <div
-                      className="text-sm font-bold tracking-tight"
-                      itemProp="price"
-                    >
-                      Ksh.35,000
-                    </div>
-                    <meta itemProp="priceCurrency" content="USD" />
-                  </div>
-                  <div className="flex gap-2">
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                      style={{
-                        backgroundColor: "#0a0a0a",
-                        color: "#ffffff",
-                        border: "1px solid #333",
-                      }}
-                    >
-                      <Link href="/our-work?tab=website">View Examples</Link>
-                    </Button>
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
-                      style={{ backgroundColor: ACCENT }}
-                    >
-                      <Link
-                        href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Professional%20Website"
-                        target="_blank"
-                      >
-                        Order Now
-                      </Link>
-                    </Button>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <ul className="grid gap-2" itemProp="description">
-                    {[
-                      "Up to 10 pages",
-                      "Advanced responsive design",
-                      "SEO optimization",
-                      "Google Analytics setup",
-                      "3rd party integration",
-                      "CMS integration",
-                      "Admin panel",
-                      "3 months support",
-                    ].map((f, i) => (
-                      <FeatureItem key={i} text={f} />
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter />
-              </Card>
+                </CarouselItem>
 
-              {/* Premium Website */}
-              <Card
-                className="relative overflow-hidden rounded-2xl liquid-glass-enhanced shadow-[0_16px_50px_rgba(0,0,0,0.4)] transition-all duration-300"
-                itemScope
-                itemType="https://schema.org/Offer"
-              >
-                <CardHeader className="relative space-y-3 pb-4">
-                  <div
-                    className="text-sm font-semibold text-neutral-200"
-                    itemProp="name"
-                  >
-                    E-commerce
-                  </div>
-                  <div className="flex items-end gap-2 text-white">
-                    <div
-                      className="text-sm font-bold tracking-tight"
-                      itemProp="price"
+                <CarouselItem className="md:basis-auto">
+                  <div className="mt-10">
+                    {/* Premium Website */}
+                    <Card
+                      className="relative overflow-hidden rounded-2xl liquid-glass-enhanced shadow-[0_16px_50px_rgba(0,0,0,0.4)] transition-all duration-300 min-h-[500px]"
+                      itemScope
+                      itemType="https://schema.org/Offer"
                     >
-                      Ksh.70,000
-                    </div>
+                      <CardHeader className="relative space-y-3 pb-4">
+                        <div
+                          className="text-sm font-semibold text-neutral-200"
+                          itemProp="name"
+                        >
+                          E-commerce
+                        </div>
+                        <div className="flex items-end gap-2 text-white">
+                          <div
+                            className="text-sm font-bold tracking-tight"
+                            itemProp="price"
+                          >
+                            Ksh.70,000
+                          </div>
 
-                    <meta itemProp="priceCurrency" content="USD" />
+                          <meta itemProp="priceCurrency" content="USD" />
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
+                            style={{
+                              backgroundColor: "#0a0a0a",
+                              color: "#ffffff",
+                              border: "1px solid #333",
+                            }}
+                          >
+                            <Link href="/our-work/website">View Samples</Link>
+                          </Button>
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
+                            style={{ backgroundColor: ACCENT }}
+                          >
+                            <Link
+                              href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20E-commerce%20Website"
+                              target="_blank"
+                            >
+                              Order Now
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="relative pt-0">
+                        <ul className="grid gap-2" itemProp="description">
+                          {[
+                            "Unlimited pages",
+                            "Custom design & development",
+                            "Advanced SEO & analytics",
+                            "Full e-commerce integration",
+                            "Basic SEO + Product SEO",
+                            "Custom functionality",
+                            "Sewcure Payment gateway",
+                            "Google Analytics setup",
+                            "6 months support",
+                          ].map((f, i) => (
+                            <FeatureItem key={i} text={f} />
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter />
+                    </Card>
                   </div>
-                  <div className="flex gap-2">
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                      style={{
-                        backgroundColor: "#0a0a0a",
-                        color: "#ffffff",
-                        border: "1px solid #333",
-                      }}
-                    >
-                      <Link href="/our-work?tab=website">View Examples</Link>
-                    </Button>
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
-                      style={{ backgroundColor: ACCENT }}
-                    >
-                      <Link
-                        href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20E-commerce%20Website"
-                        target="_blank"
-                      >
-                        Order Now
-                      </Link>
-                    </Button>
-                  </div>
-                </CardHeader>
-                <CardContent className="relative pt-0">
-                  <ul className="grid gap-2" itemProp="description">
-                    {[
-                      "Unlimited pages",
-                      "Custom design & development",
-                      "Advanced SEO & analytics",
-                      "Full e-commerce integration",
-                      "Basic SEO + Product SEO",
-                      "Custom functionality",
-                      "Sewcure Payment gateway",
-                      "Google Analytics setup",
-                      "6 months support",
-                    ].map((f, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2
-                          className="mt-0.5 h-4 w-4"
-                          style={{ color: ACCENT }}
-                        />
-                        <span className="text-sm text-neutral-200">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter />
-              </Card>
-            </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
           </TabsContent>
 
           <TabsContent value="social-media">
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
-              {/* Basic Graphics Pack */}
-              <Card
-                className="relative overflow-hidden rounded-2xl liquid-glass shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300"
-                itemScope
-                itemType="https://schema.org/Offer"
-              >
-                <CardHeader className="space-y-3 pb-4">
-                  <div
-                    className="text-sm font-semibold text-neutral-200"
-                    itemProp="name"
-                  >
-                    Basic Pack
-                  </div>
-                  <div className="flex items-end gap-2 text-neutral-100">
-                    <div
-                      className="text-sm font-bold tracking-tight"
-                      itemProp="price"
+            <Carousel
+              opts={{
+                align: "start",
+                startIndex: 1, // Set the middle package to be seen first
+                dragFree: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="flex [&>div]:min-w-[80%] md:grid md:grid-cols-3 md:gap-x-6 [&>div]:md:min-w-0">
+                <CarouselItem className="md:basis-auto">
+                  <div className="mt-10">
+                    {/* Basic Graphics Pack */}
+                    <Card
+                      className="relative overflow-hidden rounded-2xl liquid-glass shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300 min-h-[500px]"
+                      itemScope
+                      itemType="https://schema.org/Offer"
                     >
-                      Ksh.15,000
-                    </div>
+                      <CardHeader className="space-y-3 pb-4">
+                        <div
+                          className="text-sm font-semibold text-neutral-200"
+                          itemProp="name"
+                        >
+                          Basic Pack
+                        </div>
+                        <div className="flex items-end gap-2 text-neutral-100">
+                          <div
+                            className="text-sm font-bold tracking-tight"
+                            itemProp="price"
+                          >
+                            Ksh.15,000
+                          </div>
 
-                    <meta itemProp="priceCurrency" content="USD" />
+                          <meta itemProp="priceCurrency" content="USD" />
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
+                            style={{
+                              backgroundColor: "#0a0a0a",
+                              color: "#ffffff",
+                              border: "1px solid #333",
+                            }}
+                          >
+                            <Link href="/our-work/branding">View Samples</Link>
+                          </Button>
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
+                            style={{ backgroundColor: ACCENT }}
+                          >
+                            <Link
+                              href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Basic%20Pack"
+                              target="_blank"
+                            >
+                              Order Now
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <ul className="grid gap-2" itemProp="description">
+                          {[
+                            "20 social media posts",
+                            "Stories & highlights",
+                            "Basic branding",
+                            "2 revisions per post",
+                            "Perfect for posting 1month",
+                            "Perfect for ads,instagram & facebook",
+                            "Delivered in 48hrs",
+                          ].map((f, i) => (
+                            <FeatureItem key={i} text={f} />
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter />
+                    </Card>
                   </div>
-                  <div className="flex gap-2">
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                      style={{
-                        backgroundColor: "#0a0a0a",
-                        color: "#ffffff",
-                        border: "1px solid #333",
-                      }}
-                    >
-                      <Link href="/our-work?tab=branding">View Examples</Link>
-                    </Button>
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
-                      style={{ backgroundColor: ACCENT }}
-                    >
-                      <Link
-                        href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Basic%20Pack"
-                        target="_blank"
-                      >
-                        Order Now
-                      </Link>
-                    </Button>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <ul className="grid gap-2" itemProp="description">
-                    {[
-                      "20 social media posts",
-                      "Stories & highlights",
-                      "Basic branding",
-                      "2 revisions per post",
-                      "Perfect for posting 1month",
-                      "Perfect for ads,instagram & facebook",
-                      "Delivered in 48hrs",
-                    ].map((f, i) => (
-                      <FeatureItem key={i} text={f} />
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter />
-              </Card>
+                </CarouselItem>
 
-              {/* Pro Graphics Pack */}
-              <Card
-                className="relative overflow-hidden rounded-2xl liquid-glass shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300"
-                itemScope
-                itemType="https://schema.org/Offer"
-              >
-                <CardHeader className="space-y-3 pb-4">
-                  <div
-                    className="text-sm font-semibold text-neutral-200"
-                    itemProp="name"
-                  >
-                    Startup Pack
-                  </div>
-                  <div className="flex items-end gap-2 text-neutral-100">
-                    <div
-                      className="text-sm font-bold tracking-tight"
-                      itemProp="price"
+                <CarouselItem className="md:basis-auto">
+                  <div className="mt-10">
+                    {/* Pro Graphics Pack */}
+                    <Card
+                      className="relative overflow-hidden rounded-2xl liquid-glass shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300 min-h-[500px]"
+                      itemScope
+                      itemType="https://schema.org/Offer"
                     >
-                      Ksh 10,000
-                    </div>
-                    <meta itemProp="priceCurrency" content="USD" />
+                      <CardHeader className="space-y-3 pb-4">
+                        <div
+                          className="text-sm font-semibold text-neutral-200"
+                          itemProp="name"
+                        >
+                          Startup Pack
+                        </div>
+                        <div className="flex items-end gap-2 text-neutral-100">
+                          <div
+                            className="text-sm font-bold tracking-tight"
+                            itemProp="price"
+                          >
+                            Ksh 10,000
+                          </div>
+                          <meta itemProp="priceCurrency" content="USD" />
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
+                            style={{
+                              backgroundColor: "#0a0a0a",
+                              color: "#ffffff",
+                              border: "1px solid #333",
+                            }}
+                          >
+                            <Link href="/our-work/branding">View Samples</Link>
+                          </Button>
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
+                            style={{ backgroundColor: ACCENT }}
+                          >
+                            <Link
+                              href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Startup%20Pack"
+                              target="_blank"
+                            >
+                              Order Now
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <ul className="grid gap-2" itemProp="description">
+                          {[
+                            "Logo design",
+                            "basic brand kit",
+                            "3 posters/flyers",
+                            "receipt  + invoice/letterhead+ businesscard",
+                            "2 revisions per post",
+                            "High-resolution files",
+                            "Delivered in 48hrs",
+                          ].map((f, i) => (
+                            <FeatureItem key={i} text={f} />
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter />
+                    </Card>
                   </div>
-                  <div className="flex gap-2">
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                      style={{
-                        backgroundColor: "#0a0a0a",
-                        color: "#ffffff",
-                        border: "1px solid #333",
-                      }}
-                    >
-                      <Link href="/our-work?tab=branding">View Examples</Link>
-                    </Button>
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
-                      style={{ backgroundColor: ACCENT }}
-                    >
-                      <Link
-                        href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Startup%20Pack"
-                        target="_blank"
-                      >
-                        Order Now
-                      </Link>
-                    </Button>
-                  </div>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <ul className="grid gap-2" itemProp="description">
-                    {[
-                      "Logo design",
-                      "basic brand kit",
-                      "3 posters/flyers",
-                      "receipt  + invoice/letterhead+ businesscard",
-                      "2 revisions per post",
-                      "High-resolution files",
-                      "Delivered in 48hrs",
-                    ].map((f, i) => (
-                      <FeatureItem key={i} text={f} />
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter />
-              </Card>
+                </CarouselItem>
 
-              {/* Premium Graphics Pack */}
-              <Card
-                className="relative overflow-hidden rounded-2xl liquid-glass-enhanced shadow-[0_16px_50px_rgba(0,0,0,0.4)] transition-all duration-300"
-                itemScope
-                itemType="https://schema.org/Offer"
-              >
-                <CardHeader className="relative space-y-3 pb-4">
-                  <div
-                    className="text-sm font-semibold text-neutral-200"
-                    itemProp="name"
-                  >
-                    Event Pack
-                  </div>
-                  <div className="flex items-end gap-2 text-white">
-                    <div
-                      className="text-sm font-bold tracking-tight"
-                      itemProp="price"
+                <CarouselItem className="md:basis-auto">
+                  <div className="mt-10">
+                    {/* Premium Graphics Pack */}
+                    <Card
+                      className="relative overflow-hidden rounded-2xl liquid-glass-enhanced shadow-[0_16px_50px_rgba(0,0,0,0.4)] transition-all duration-300 min-h-[500px]"
+                      itemScope
+                      itemType="https://schema.org/Offer"
                     >
-                      Ksh 20,000
-                    </div>
+                      <CardHeader className="relative space-y-3 pb-4">
+                        <div
+                          className="text-sm font-semibold text-neutral-200"
+                          itemProp="name"
+                        >
+                          Event Pack
+                        </div>
+                        <div className="flex items-end gap-2 text-white">
+                          <div
+                            className="text-sm font-bold tracking-tight"
+                            itemProp="price"
+                          >
+                            Ksh 20,000
+                          </div>
 
-                    <meta itemProp="priceCurrency" content="USD" />
+                          <meta itemProp="priceCurrency" content="USD" />
+                        </div>
+                        <div className="flex gap-2">
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
+                            style={{
+                              backgroundColor: "#0a0a0a",
+                              color: "#ffffff",
+                              border: "1px solid #333",
+                            }}
+                          >
+                            <Link href="/our-work/branding">View Samples</Link>
+                          </Button>
+                          <Button
+                            asChild
+                            className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
+                            style={{ backgroundColor: ACCENT }}
+                          >
+                            <Link
+                              href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Event%20Pack"
+                              target="_blank"
+                            >
+                              Order Now
+                            </Link>
+                          </Button>
+                        </div>
+                      </CardHeader>
+                      <CardContent className="relative pt-0">
+                        <ul className="grid gap-2" itemProp="description">
+                          {[
+                            "Event logo & theme",
+                            "social media post & banners",
+                            "attendee spotlight",
+                            "Backdrops & stage design",
+                            "tickets & invitations",
+                            "event merchandise",
+                            "Unlimited revisions",
+                            "Priority support",
+                            "Delivered in 72hrs",
+                          ].map((f, i) => (
+                            <FeatureItem key={i} text={f} />
+                          ))}
+                        </ul>
+                      </CardContent>
+                      <CardFooter />
+                    </Card>
                   </div>
-                  <div className="flex gap-2">
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                      style={{
-                        backgroundColor: "#0a0a0a",
-                        color: "#ffffff",
-                        border: "1px solid #333",
-                      }}
-                    >
-                      <Link href="/our-work?tab=branding">View Examples</Link>
-                    </Button>
-                    <Button
-                      asChild
-                      className="flex-1 rounded-full px-4 py-2 text-sm font-medium text-black shadow transition-[box-shadow,transform,filter] active:translate-y-[1px]"
-                      style={{ backgroundColor: ACCENT }}
-                    >
-                      <Link
-                        href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20order%20Event%20Pack"
-                        target="_blank"
-                      >
-                        Order Now
-                      </Link>
-                    </Button>
-                  </div>
-                </CardHeader>
-                <CardContent className="relative pt-0">
-                  <ul className="grid gap-2" itemProp="description">
-                    {[
-                      "Event logo & theme",
-                      "social media post & banners",
-                      "attendee spotlight",
-                      "Backdrops & stage design",
-                      "tickets & invitations",
-                      "event merchandise",
-                      "Unlimited revisions",
-                      "Priority support",
-                      "Delivered in 72hrs",
-                    ].map((f, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2
-                          className="mt-0.5 h-4 w-4"
-                          style={{ color: ACCENT }}
-                        />
-                        <span className="text-sm text-neutral-200">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter />
-              </Card>
-            </div>
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
           </TabsContent>
 
           {/* Our Work Carousel */}
@@ -774,6 +815,25 @@ export function Pricing() {
               </div>
             </div>
           </section>
+
+          {/* Call to Action */}
+          <div className="mt-16 text-center">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+              Ready to elevate your brand?
+            </h2>
+            <p className="mt-4 text-lg text-neutral-400">
+              Contact us today to get started on your next project!
+            </p>
+            <Button
+              asChild
+              className="mt-8 rounded-full px-8 py-3 text-lg font-medium text-black shadow-lg transition-[box-shadow,transform,filter] active:translate-y-[1px]"
+              style={{ backgroundColor: ACCENT }}
+            >
+              <Link href="https://wa.me/254722465983?text=Hello%2C%20I%20want%20to%20know%20more%20about%20your%20services">
+                Get a Free Quote
+              </Link>
+            </Button>
+          </div>
         </div>
 
         {/* Modals */}
