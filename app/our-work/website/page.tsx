@@ -15,7 +15,7 @@ export default function WebsitePage() {
   };
 
   const websiteWorks = [
-    {
+  /*{
       id: 1,
       title: "Payment Integration",
       image: "/placeholder.jpg",
@@ -35,7 +35,7 @@ export default function WebsitePage() {
       image: "/placeholder.jpg",
       demoUrl: "/our-work/website/3",
       price: "KSH 25,000",
-    },
+    },*/
     {
       id: 4,
       title: "NGO Website With MPesa Donation ",
